@@ -39,10 +39,10 @@ Namespace Services
     End Sub
 
     Public Sub CriarCarro() Implements IFabrica.CriarCarro
-      Carro = New Carro() With {.Marca = "Genérica", .Ano = 2024, .Modelo = "Novo", .Cor = Drawing.Color.Blue}
+      Carro = New Carro() With {.Marca = "Genérica", .Ano = 2024, .Modelo = "Novo", .Cor = "Blue"}
     End Sub
 
-    Public Sub PintarCarro(color As Drawing.Color) Implements IFabrica.PintarCarro
+    Public Sub PintarCarro(color As String) Implements IFabrica.PintarCarro
       Carro.Cor = color
     End Sub
 

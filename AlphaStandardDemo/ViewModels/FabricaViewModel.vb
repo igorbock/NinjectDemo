@@ -14,7 +14,7 @@ Namespace ViewModel
       CurrentCar = car
     End Sub
 
-    Public Overrides Sub ChangeColor(color As Color)
+    Public Overrides Sub ChangeColor(color As String)
       CurrentCar.Cor = color
     End Sub
 

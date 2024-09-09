@@ -1,4 +1,4 @@
-﻿Imports System.Collections.ObjectModel
+﻿Imports System.ComponentModel
 Imports AlphaStandardDemo.Context
 Imports AlphaStandardDemo.Interfaces
 
@@ -12,7 +12,7 @@ Namespace Abstracts
     End Sub
 
     Public MustOverride Sub Create(entity As TypeT)
-    Public MustOverride Function GetAll() As ObservableCollection(Of TypeT)
+    Public MustOverride Function GetAll() As BindingList(Of TypeT)
     Public MustOverride Function GetById(id As Integer) As TypeT
     Public MustOverride Sub Update(entity As TypeT)
     Public MustOverride Sub Delete(id As Integer)

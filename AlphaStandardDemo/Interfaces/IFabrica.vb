@@ -6,7 +6,7 @@ Namespace Interfaces
     Property Entregues As Integer
     Property ListaCarrosEntregues As List(Of String)
     Sub CriarCarro()
-    Sub PintarCarro(color As Drawing.Color)
+    Sub PintarCarro(color As String)
     Sub MudarMarca(marca As String)
     Sub MudarModelo(modelo As String)
     Sub MudarAno(ano As Integer)

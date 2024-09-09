@@ -1,4 +1,4 @@
-﻿Imports System.Collections.ObjectModel
+﻿Imports System.ComponentModel
 Imports AlphaStandardDemo.Abstracts
 Imports AlphaStandardDemo.Context
 Imports AlphaStandardDemo.Models
@@ -26,8 +26,8 @@ Namespace Repositories
       _dbContext.Carros.Remove(GetById(id))
     End Sub
 
-    Public Overrides Function GetAll() As ObservableCollection(Of Carro)
-      Return _dbContext.Carros.Local.ToObservableCollection()
+    Public Overrides Function GetAll() As BindingList(Of Carro)
+      Return _dbContext.Carros.Local.ToBindingList()
     End Function
 
     Public Overrides Function GetById(id As Integer) As Carro

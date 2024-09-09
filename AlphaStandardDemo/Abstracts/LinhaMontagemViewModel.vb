@@ -97,17 +97,27 @@ Namespace Abstracts
         OnPropertyChanged(NameOf(ButtonCancelEnabled))
       End Set
     End Property
+    Private _controlsEnabled As Boolean
+    Public Property ControlsEnabled() As Boolean
+      Get
+        Return _controlsEnabled
+      End Get
+      Set(value As Boolean)
+        _controlsEnabled = value
+        OnPropertyChanged(NameOf(ControlsEnabled))
+      End Set
+    End Property
 
     Public Sub New()
       ReadMode()
     End Sub
 
-    Protected MustOverride Sub CreateCar(car As Carro)
-    Protected MustOverride Sub ChangeColor(color As Drawing.Color)
-    Protected MustOverride Sub ChangeBrand(brand As String)
-    Protected MustOverride Sub ChangeModel(model As String)
-    Protected MustOverride Sub ChangeYear(year As Integer)
-    Protected MustOverride Sub YieldCar(car As Carro)
+    Public MustOverride Sub CreateCar(car As Carro)
+    Public MustOverride Sub ChangeColor(color As String)
+    Public MustOverride Sub ChangeBrand(brand As String)
+    Public MustOverride Sub ChangeModel(model As String)
+    Public MustOverride Sub ChangeYear(year As Integer)
+    Public MustOverride Sub YieldCar(car As Carro)
 
     Public Overridable Sub EditMode()
       ButtonNewEnabled = False
@@ -116,6 +126,7 @@ Namespace Abstracts
       ButtonCloseEnabled = False
       ButtonSaveEnabled = True
       ButtonCancelEnabled = True
+      ControlsEnabled = True
     End Sub
     Public Overridable Sub ReadMode()
       ButtonNewEnabled = True
@@ -124,6 +135,7 @@ Namespace Abstracts
       ButtonCloseEnabled = True
       ButtonSaveEnabled = False
       ButtonCancelEnabled = False
+      ControlsEnabled = False
     End Sub
 
     Public ReadOnly Property CreateCarCommand As ICommand

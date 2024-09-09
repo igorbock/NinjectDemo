@@ -22,18 +22,11 @@ Partial Class DemoFabrica
   'Não o modifique usando o editor de códigos.
   <System.Diagnostics.DebuggerStepThrough()> _
   Private Sub InitializeComponent()
-        Me.components = New System.ComponentModel.Container()
         Dim AnoLabel As System.Windows.Forms.Label
         Dim IdLabel As System.Windows.Forms.Label
         Dim MarcaLabel As System.Windows.Forms.Label
         Dim ModeloLabel As System.Windows.Forms.Label
         Me.DataGridView = New System.Windows.Forms.DataGridView()
-        Me.CarroBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.IdDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.MarcaDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ModeloDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.CorDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.AnoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.AnoNumericUpDown = New System.Windows.Forms.NumericUpDown()
         Me.IdNumericUpDown = New System.Windows.Forms.NumericUpDown()
         Me.MarcaTextBox = New System.Windows.Forms.TextBox()
@@ -46,126 +39,94 @@ Partial Class DemoFabrica
         Me.ButtonCancelar = New System.Windows.Forms.Button()
         Me.ButtonSalvar = New System.Windows.Forms.Button()
         Me.ButtonFechar = New System.Windows.Forms.Button()
+        Me.colId = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.colMarca = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.colModelo = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.colCor = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.colAno = New System.Windows.Forms.DataGridViewTextBoxColumn()
         AnoLabel = New System.Windows.Forms.Label()
         IdLabel = New System.Windows.Forms.Label()
         MarcaLabel = New System.Windows.Forms.Label()
         ModeloLabel = New System.Windows.Forms.Label()
         CType(Me.DataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.CarroBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.AnoNumericUpDown, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.IdNumericUpDown, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        'DataGridView
-        '
-        Me.DataGridView.AutoGenerateColumns = False
-        Me.DataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.IdDataGridViewTextBoxColumn, Me.MarcaDataGridViewTextBoxColumn, Me.ModeloDataGridViewTextBoxColumn, Me.CorDataGridViewTextBoxColumn, Me.AnoDataGridViewTextBoxColumn})
-        Me.DataGridView.DataSource = Me.CarroBindingSource
-        Me.DataGridView.Location = New System.Drawing.Point(30, 195)
-        Me.DataGridView.Name = "DataGridView"
-        Me.DataGridView.RowHeadersVisible = False
-        Me.DataGridView.Size = New System.Drawing.Size(550, 150)
-        Me.DataGridView.TabIndex = 0
-        '
-        'CarroBindingSource
-        '
-        Me.CarroBindingSource.DataSource = GetType(AlphaStandardDemo.Models.Carro)
-        '
-        'IdDataGridViewTextBoxColumn
-        '
-        Me.IdDataGridViewTextBoxColumn.DataPropertyName = "Id"
-        Me.IdDataGridViewTextBoxColumn.HeaderText = "Id"
-        Me.IdDataGridViewTextBoxColumn.Name = "IdDataGridViewTextBoxColumn"
-        '
-        'MarcaDataGridViewTextBoxColumn
-        '
-        Me.MarcaDataGridViewTextBoxColumn.DataPropertyName = "Marca"
-        Me.MarcaDataGridViewTextBoxColumn.HeaderText = "Marca"
-        Me.MarcaDataGridViewTextBoxColumn.Name = "MarcaDataGridViewTextBoxColumn"
-        '
-        'ModeloDataGridViewTextBoxColumn
-        '
-        Me.ModeloDataGridViewTextBoxColumn.DataPropertyName = "Modelo"
-        Me.ModeloDataGridViewTextBoxColumn.HeaderText = "Modelo"
-        Me.ModeloDataGridViewTextBoxColumn.Name = "ModeloDataGridViewTextBoxColumn"
-        '
-        'CorDataGridViewTextBoxColumn
-        '
-        Me.CorDataGridViewTextBoxColumn.DataPropertyName = "Cor"
-        Me.CorDataGridViewTextBoxColumn.HeaderText = "Cor"
-        Me.CorDataGridViewTextBoxColumn.Name = "CorDataGridViewTextBoxColumn"
-        '
-        'AnoDataGridViewTextBoxColumn
-        '
-        Me.AnoDataGridViewTextBoxColumn.DataPropertyName = "Ano"
-        Me.AnoDataGridViewTextBoxColumn.HeaderText = "Ano"
-        Me.AnoDataGridViewTextBoxColumn.Name = "AnoDataGridViewTextBoxColumn"
-        '
         'AnoLabel
         '
         AnoLabel.AutoSize = True
-        AnoLabel.Location = New System.Drawing.Point(40, 30)
+        AnoLabel.Location = New System.Drawing.Point(30, 130)
         AnoLabel.Name = "AnoLabel"
         AnoLabel.Size = New System.Drawing.Size(29, 13)
         AnoLabel.TabIndex = 1
         AnoLabel.Text = "Ano:"
         '
-        'AnoNumericUpDown
-        '
-        Me.AnoNumericUpDown.DataBindings.Add(New System.Windows.Forms.Binding("Value", Me.CarroBindingSource, "Ano", True))
-        Me.AnoNumericUpDown.Location = New System.Drawing.Point(91, 30)
-        Me.AnoNumericUpDown.Name = "AnoNumericUpDown"
-        Me.AnoNumericUpDown.Size = New System.Drawing.Size(120, 20)
-        Me.AnoNumericUpDown.TabIndex = 2
-        '
         'IdLabel
         '
         IdLabel.AutoSize = True
-        IdLabel.Location = New System.Drawing.Point(40, 56)
+        IdLabel.Location = New System.Drawing.Point(30, 25)
         IdLabel.Name = "IdLabel"
         IdLabel.Size = New System.Drawing.Size(19, 13)
         IdLabel.TabIndex = 3
         IdLabel.Text = "Id:"
         '
-        'IdNumericUpDown
-        '
-        Me.IdNumericUpDown.DataBindings.Add(New System.Windows.Forms.Binding("Value", Me.CarroBindingSource, "Id", True))
-        Me.IdNumericUpDown.Location = New System.Drawing.Point(91, 56)
-        Me.IdNumericUpDown.Name = "IdNumericUpDown"
-        Me.IdNumericUpDown.Size = New System.Drawing.Size(120, 20)
-        Me.IdNumericUpDown.TabIndex = 4
-        '
         'MarcaLabel
         '
         MarcaLabel.AutoSize = True
-        MarcaLabel.Location = New System.Drawing.Point(40, 85)
+        MarcaLabel.Location = New System.Drawing.Point(30, 54)
         MarcaLabel.Name = "MarcaLabel"
         MarcaLabel.Size = New System.Drawing.Size(40, 13)
         MarcaLabel.TabIndex = 5
         MarcaLabel.Text = "Marca:"
         '
-        'MarcaTextBox
-        '
-        Me.MarcaTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.CarroBindingSource, "Marca", True))
-        Me.MarcaTextBox.Location = New System.Drawing.Point(91, 82)
-        Me.MarcaTextBox.Name = "MarcaTextBox"
-        Me.MarcaTextBox.Size = New System.Drawing.Size(120, 20)
-        Me.MarcaTextBox.TabIndex = 6
-        '
         'ModeloLabel
         '
         ModeloLabel.AutoSize = True
-        ModeloLabel.Location = New System.Drawing.Point(40, 111)
+        ModeloLabel.Location = New System.Drawing.Point(30, 80)
         ModeloLabel.Name = "ModeloLabel"
         ModeloLabel.Size = New System.Drawing.Size(45, 13)
         ModeloLabel.TabIndex = 7
         ModeloLabel.Text = "Modelo:"
         '
+        'DataGridView
+        '
+        Me.DataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.colId, Me.colMarca, Me.colModelo, Me.colCor, Me.colAno})
+        Me.DataGridView.Location = New System.Drawing.Point(30, 195)
+        Me.DataGridView.Name = "DataGridView"
+        Me.DataGridView.RowHeadersVisible = False
+        Me.DataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.DataGridView.Size = New System.Drawing.Size(550, 150)
+        Me.DataGridView.TabIndex = 0
+        '
+        'AnoNumericUpDown
+        '
+        Me.AnoNumericUpDown.Location = New System.Drawing.Point(81, 130)
+        Me.AnoNumericUpDown.Maximum = New Decimal(New Integer() {999999, 0, 0, 0})
+        Me.AnoNumericUpDown.Name = "AnoNumericUpDown"
+        Me.AnoNumericUpDown.Size = New System.Drawing.Size(120, 20)
+        Me.AnoNumericUpDown.TabIndex = 2
+        '
+        'IdNumericUpDown
+        '
+        Me.IdNumericUpDown.Enabled = False
+        Me.IdNumericUpDown.Location = New System.Drawing.Point(81, 25)
+        Me.IdNumericUpDown.Maximum = New Decimal(New Integer() {999999, 0, 0, 0})
+        Me.IdNumericUpDown.Name = "IdNumericUpDown"
+        Me.IdNumericUpDown.Size = New System.Drawing.Size(120, 20)
+        Me.IdNumericUpDown.TabIndex = 4
+        '
+        'MarcaTextBox
+        '
+        Me.MarcaTextBox.Location = New System.Drawing.Point(81, 51)
+        Me.MarcaTextBox.Name = "MarcaTextBox"
+        Me.MarcaTextBox.Size = New System.Drawing.Size(120, 20)
+        Me.MarcaTextBox.TabIndex = 6
+        '
         'ModeloTextBox
         '
-        Me.ModeloTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.CarroBindingSource, "Modelo", True))
-        Me.ModeloTextBox.Location = New System.Drawing.Point(91, 108)
+        Me.ModeloTextBox.Location = New System.Drawing.Point(81, 77)
         Me.ModeloTextBox.Name = "ModeloTextBox"
         Me.ModeloTextBox.Size = New System.Drawing.Size(120, 20)
         Me.ModeloTextBox.TabIndex = 8
@@ -173,7 +134,7 @@ Partial Class DemoFabrica
         'LabelCor
         '
         Me.LabelCor.AutoSize = True
-        Me.LabelCor.Location = New System.Drawing.Point(40, 137)
+        Me.LabelCor.Location = New System.Drawing.Point(30, 106)
         Me.LabelCor.Name = "LabelCor"
         Me.LabelCor.Size = New System.Drawing.Size(26, 13)
         Me.LabelCor.TabIndex = 10
@@ -181,11 +142,13 @@ Partial Class DemoFabrica
         '
         'ComboBoxCor
         '
+        Me.ComboBoxCor.DisplayMember = "Nome"
         Me.ComboBoxCor.FormattingEnabled = True
-        Me.ComboBoxCor.Location = New System.Drawing.Point(91, 134)
+        Me.ComboBoxCor.Location = New System.Drawing.Point(81, 103)
         Me.ComboBoxCor.Name = "ComboBoxCor"
         Me.ComboBoxCor.Size = New System.Drawing.Size(121, 21)
         Me.ComboBoxCor.TabIndex = 11
+        Me.ComboBoxCor.ValueMember = "Valor"
         '
         'ButtonNovo
         '
@@ -241,6 +204,41 @@ Partial Class DemoFabrica
         Me.ButtonFechar.Text = "Fechar"
         Me.ButtonFechar.UseVisualStyleBackColor = True
         '
+        'colId
+        '
+        Me.colId.DataPropertyName = "Id"
+        Me.colId.HeaderText = "Id"
+        Me.colId.Name = "colId"
+        Me.colId.ReadOnly = True
+        '
+        'colMarca
+        '
+        Me.colMarca.DataPropertyName = "Marca"
+        Me.colMarca.HeaderText = "Marca"
+        Me.colMarca.Name = "colMarca"
+        Me.colMarca.ReadOnly = True
+        '
+        'colModelo
+        '
+        Me.colModelo.DataPropertyName = "Modelo"
+        Me.colModelo.HeaderText = "Modelo"
+        Me.colModelo.Name = "colModelo"
+        Me.colModelo.ReadOnly = True
+        '
+        'colCor
+        '
+        Me.colCor.DataPropertyName = "Cor"
+        Me.colCor.HeaderText = "Cor"
+        Me.colCor.Name = "colCor"
+        Me.colCor.ReadOnly = True
+        '
+        'colAno
+        '
+        Me.colAno.DataPropertyName = "Ano"
+        Me.colAno.HeaderText = "Ano"
+        Me.colAno.Name = "colAno"
+        Me.colAno.ReadOnly = True
+        '
         'DemoFabrica
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -266,7 +264,6 @@ Partial Class DemoFabrica
         Me.Name = "DemoFabrica"
         Me.Text = "DemoFabrica"
         CType(Me.DataGridView, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.CarroBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.AnoNumericUpDown, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.IdNumericUpDown, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
@@ -275,12 +272,6 @@ Partial Class DemoFabrica
     End Sub
 
     Friend WithEvents DataGridView As DataGridView
-    Friend WithEvents IdDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents MarcaDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents ModeloDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents CorDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents AnoDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents CarroBindingSource As BindingSource
     Friend WithEvents AnoNumericUpDown As NumericUpDown
     Friend WithEvents IdNumericUpDown As NumericUpDown
     Friend WithEvents MarcaTextBox As TextBox
@@ -293,4 +284,9 @@ Partial Class DemoFabrica
     Friend WithEvents ButtonCancelar As Button
     Friend WithEvents ButtonSalvar As Button
     Friend WithEvents ButtonFechar As Button
+    Friend WithEvents colId As DataGridViewTextBoxColumn
+    Friend WithEvents colMarca As DataGridViewTextBoxColumn
+    Friend WithEvents colModelo As DataGridViewTextBoxColumn
+    Friend WithEvents colCor As DataGridViewTextBoxColumn
+    Friend WithEvents colAno As DataGridViewTextBoxColumn
 End Class

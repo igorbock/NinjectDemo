@@ -20,11 +20,11 @@ Public Class Exemplo
     _fabrica = fabrica
 
     Cores = New List(Of Cor) From {
-      New Cor With {.Nome = "Vermelho", .Valor = Color.Red},
-      New Cor With {.Nome = "Azul", .Valor = Color.Blue},
-      New Cor With {.Nome = "Verde", .Valor = Color.Green},
-      New Cor With {.Nome = "Laranja", .Valor = Color.Orange},
-      New Cor With {.Nome = "Preto", .Valor = Color.Black}
+      New Cor With {.Nome = "Vermelho", .Valor = Color.Red.Name},
+      New Cor With {.Nome = "Azul", .Valor = Color.Blue.Name},
+      New Cor With {.Nome = "Verde", .Valor = Color.Green.Name},
+      New Cor With {.Nome = "Laranja", .Valor = Color.Orange.Name},
+      New Cor With {.Nome = "Preto", .Valor = Color.Black.Name}
     }
 
     ComboBoxCores.DataSource = Cores
@@ -36,7 +36,7 @@ Public Class Exemplo
 
       LabelMarca.Text = $"Marca: {_fabrica.Carro.Marca}"
       LabelModelo.Text = $"Modelo: {_fabrica.Carro.Modelo}"
-      ColorPanel.BackColor = _fabrica.Carro.Cor
+      ColorPanel.BackColor = Color.FromName(_fabrica.Carro.Cor)
       LabelAno.Text = $"Ano: {_fabrica.Carro.Ano}"
 
       ComboBoxCores.SelectedValue = _fabrica.Carro.Cor

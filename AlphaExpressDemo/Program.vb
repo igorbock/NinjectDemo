@@ -12,6 +12,6 @@ Public Module Program
 
     kernel = New StandardKernel(New AlphaExpressModule(), New StandardModule())
 
-    Application.Run(kernel.Get(Of Exemplo))
+    Application.Run(kernel.Get(Of DemoFabrica))
   End Sub
 End Module
