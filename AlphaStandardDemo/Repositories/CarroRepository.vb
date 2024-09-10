@@ -3,13 +3,14 @@ Imports AlphaStandardDemo.Abstracts
 Imports AlphaStandardDemo.Context
 Imports AlphaStandardDemo.Models
 Imports Microsoft.EntityFrameworkCore
+Imports Npgsql
 
 Namespace Repositories
   Public Class CarroRepository
     Inherits GenericRepository(Of Carro)
 
-    Public Sub New(context As DemoDbContext)
-      MyBase.New(context)
+    Public Sub New(context As DemoDbContext, connection As String)
+      MyBase.New(context, connection)
 
       _dbContext.Carros.Load()
     End Sub

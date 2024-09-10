@@ -46,13 +46,6 @@
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="DevExpress.Data.Desktop.v24.1, Version=24.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.Data.v24.1, Version=24.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.Drawing.v24.1, Version=24.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.Printing.v24.1.Core, Version=24.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.Sparkline.v24.1.Core, Version=24.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.Utils.v24.1, Version=24.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.XtraEditors.v24.1, Version=24.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
@@ -79,16 +72,22 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Exemplo.Designer.vb">
+    <Compile Include="Forms\Exemplo.Designer.vb">
       <DependentUpon>Exemplo.vb</DependentUpon>
     </Compile>
-    <Compile Include="Exemplo.vb">
+    <Compile Include="Forms\Exemplo.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\DemoFabrica.Designer.vb">
       <DependentUpon>DemoFabrica.vb</DependentUpon>
     </Compile>
     <Compile Include="Forms\DemoFabrica.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmCadastro_Safra.Designer.vb">
+      <DependentUpon>frmCadastro_Safra.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmCadastro_Safra.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="My Project\Application.Designer.vb">
@@ -108,11 +107,14 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Exemplo.resx">
+    <EmbeddedResource Include="Forms\Exemplo.resx">
       <DependentUpon>Exemplo.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\DemoFabrica.resx">
       <DependentUpon>DemoFabrica.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmCadastro_Safra.resx">
+      <DependentUpon>frmCadastro_Safra.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\licenses.licx" />
     <EmbeddedResource Include="My Project\Resources.resx">
