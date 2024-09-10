@@ -104,12 +104,5 @@ Namespace Abstracts
       ' Se algo falhar, retornar um DataReader vazio
       Return (New DataTable()).CreateDataReader()
     End Function
-    Protected Function GetTypeT(query As String) As ObservableCollection(Of TypeT)
-      Using dataReader As IDataReader = ExecuteDR(query)
-        While dataReader.Read()
-
-        End While
-      End Using
-    End Function
   End Class
 End Namespace
