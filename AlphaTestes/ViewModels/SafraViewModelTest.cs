@@ -11,6 +11,7 @@ public class SafraViewModelTest
     private GenericViewModel<Safra> _viewModel;
     private Mock<GenericRepository<Safra>> _mockRepository;
     private BindingList<Safra> _safras;
+    private ErrorEventArgs? _errorEventArgs;
 
     [SetUp]
     public void Setup()
@@ -36,6 +37,7 @@ public class SafraViewModelTest
         _mockRepository.Setup(a => a.GetById(5)).Returns(_safras.First(a => a.Id == 5));
 
         _viewModel = new SafraViewModel(_mockRepository.Object);
+        _viewModel.ErrorOcurred += (sender, message) => _errorEventArgs = message;
     }
 
     [Test]
@@ -73,6 +75,34 @@ public class SafraViewModelTest
         Assert.That(_viewModel.ButtonCloseEnabled, Is.True);
         Assert.That(_viewModel.ButtonSaveEnabled, Is.False);
         Assert.That(_viewModel.ButtonCancelEnabled, Is.False);
+        Assert.Pass();
+    }
+
+    [Test]
+    public void UpdateCommandTest()
+    {
+#pragma warning disable CS8625 // Não é possível converter um literal nulo em um tipo de referência não anulável.
+        _viewModel.CurrentItem = null;
+#pragma warning restore CS8625 // Não é possível converter um literal nulo em um tipo de referência não anulável.
+        _viewModel.UpdateCommand.Execute(null);
+
+        var exception = _errorEventArgs!.GetException();
+        Assert.That(exception.Message, Is.EqualTo("Selecione um registro"));
+
+        Assert.Pass();
+    }
+
+    [Test]
+    public void DeleteCommandTest()
+    {
+#pragma warning disable CS8625 // Não é possível converter um literal nulo em um tipo de referência não anulável.
+        _viewModel.CurrentItem = null;
+#pragma warning restore CS8625 // Não é possível converter um literal nulo em um tipo de referência não anulável.
+        _viewModel.UpdateCommand.Execute(null);
+
+        var exception = _errorEventArgs!.GetException();
+        Assert.That(exception.Message, Is.EqualTo("Selecione um registro"));
+
         Assert.Pass();
     }
 }
