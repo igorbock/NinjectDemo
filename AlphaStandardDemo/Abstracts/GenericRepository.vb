@@ -12,6 +12,10 @@ Namespace Abstracts
     Protected ReadOnly Property _npgsqlConnection As NpgsqlConnection
     Protected ReadOnly Property _connectionString As String
 
+    'Construtor para testes unitários com Moq
+    Public Sub New()
+    End Sub
+
     Public Sub New(context As DemoDbContext, connection As String)
       _dbContext = context
       _npgsqlConnection = New NpgsqlConnection(connection)
