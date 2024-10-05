@@ -1,4 +1,4 @@
-﻿Imports AlphaStandardDemo.Models
+﻿Imports AlphaLib.Models
 Imports Microsoft.EntityFrameworkCore
 
 Namespace Context

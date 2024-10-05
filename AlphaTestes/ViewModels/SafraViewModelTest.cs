@@ -1,5 +1,5 @@
-using AlphaStandardDemo.Abstracts;
-using AlphaStandardDemo.Models;
+using AlphaLib.Abstracts;
+using AlphaLib.Models;
 using AlphaStandardDemo.ViewModel;
 using Moq;
 using System.ComponentModel;

@@ -1,15 +1,23 @@
-﻿Imports AlphaStandardDemo.Abstracts
-Imports AlphaStandardDemo.Models
+﻿Imports AlphaLib.Abstracts
+Imports AlphaLib.Models
 
 Public Class frmCadastro_Safra
   Private ReadOnly Property _viewModel As GenericViewModel(Of Safra)
+  Public Property DataSource() As Object
+    Get
+      Return DataGridView.DataSource
+    End Get
+    Set(value As Object)
+      DataGridView.DataSource = value
+    End Set
+  End Property
 
   Public Sub New(viewModel As GenericViewModel(Of Safra))
     InitializeComponent()
 
     _viewModel = viewModel
 
-    DataGridView.DataBindings.Add("DataSource", _viewModel, NameOf(_viewModel.ListTypeT), True, DataSourceUpdateMode.OnPropertyChanged)
+    DataBindings.Add(NameOf(DataSource), _viewModel, NameOf(_viewModel.ListTypeT), True, DataSourceUpdateMode.OnPropertyChanged)
     TextBoxId.DataBindings.Add("Text", _viewModel, "CurrentItem.Id", True, DataSourceUpdateMode.OnPropertyChanged)
     TextBoxDescricao.DataBindings.Add("Text", _viewModel, "CurrentItem.Descricao", True, DataSourceUpdateMode.OnPropertyChanged)
     CheckBoxInativo.DataBindings.Add("Checked", _viewModel, "CurrentItem.Inativo", True, DataSourceUpdateMode.OnPropertyChanged)

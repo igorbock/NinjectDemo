@@ -1,5 +1,5 @@
 ﻿Imports AlphaAgroDemo
-Imports AlphaStandardDemo.Interfaces
+Imports AlphaLib.Interfaces
 Imports Ninject.Modules
 
 Public Class AlphaExpressModule

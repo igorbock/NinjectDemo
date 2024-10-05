@@ -1,6 +1,6 @@
 ﻿Imports System.Reflection
 Imports AlphaAgroDemo
-Imports AlphaStandardDemo.Interfaces
+Imports AlphaLib.Interfaces
 Imports Ninject
 
 Public Class NavigatorWindowsForms

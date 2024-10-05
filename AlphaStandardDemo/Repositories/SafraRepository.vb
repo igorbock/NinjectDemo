@@ -1,7 +1,7 @@
 ﻿Imports System.Data
-Imports AlphaStandardDemo.Abstracts
+Imports AlphaLib.Abstracts
 Imports AlphaStandardDemo.Context
-Imports AlphaStandardDemo.Models
+Imports AlphaLib.Models
 
 Namespace Repositories
   Public Class SafraRepository

@@ -1,4 +1,4 @@
-﻿Imports AlphaStandardDemo.Interfaces
+﻿Imports AlphaLib.Interfaces
 
 Public Class HomePage
 

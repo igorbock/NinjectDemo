@@ -1,7 +1,7 @@
-﻿Imports AlphaStandardDemo.Abstracts
+﻿Imports AlphaLib.Abstracts
+Imports AlphaLib.Interfaces
+Imports AlphaLib.Models
 Imports AlphaStandardDemo.Context
-Imports AlphaStandardDemo.Interfaces
-Imports AlphaStandardDemo.Models
 Imports AlphaStandardDemo.Repositories
 Imports AlphaStandardDemo.Services
 Imports AlphaStandardDemo.ViewModel

@@ -1,12 +1,13 @@
-﻿Imports System.Drawing
-Imports AlphaStandardDemo.Abstracts
-Imports AlphaStandardDemo.Models
+﻿Imports AlphaLib.Abstracts
+Imports AlphaLib.Models
 
 Namespace ViewModel
   Public Class FabricaViewModel
     Inherits LinhaMontagemViewModel
 
-    Public Sub New()
+    Public Sub New(carroRepository As GenericRepository(Of Carro))
+      MyBase.New(carroRepository)
+
       DeliveredCarsList = New List(Of Carro)
     End Sub
 

@@ -1,5 +1,5 @@
-﻿Imports AlphaStandardDemo.Abstracts
-Imports AlphaStandardDemo.Models
+﻿Imports AlphaLib.Abstracts
+Imports AlphaLib.Models
 Imports AlphaStandardDemo.ViewModel
 
 Public Class DemoFabrica

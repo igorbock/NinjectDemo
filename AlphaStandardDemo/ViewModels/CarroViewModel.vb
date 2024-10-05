@@ -1,6 +1,6 @@
 ﻿Imports System.Drawing
-Imports AlphaStandardDemo.Abstracts
-Imports AlphaStandardDemo.Models
+Imports AlphaLib.Abstracts
+Imports AlphaLib.Models
 
 Namespace ViewModel
   Public Class CarroViewModel

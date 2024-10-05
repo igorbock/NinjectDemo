@@ -1,5 +1,5 @@
-﻿Imports AlphaStandardDemo.Interfaces
-Imports AlphaStandardDemo.Models
+﻿Imports AlphaLib.Interfaces
+Imports AlphaLib.Models
 
 Namespace Services
   Public Class LinhaMontagem

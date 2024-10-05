@@ -140,6 +140,10 @@
     <Service Include="{94E38DFF-614B-4cbd-B67C-F211BB35CE8B}" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\AlphaLib\AlphaLib.csproj">
+      <Project>{c951c77a-6951-4aa6-8b3c-18498a1116c3}</Project>
+      <Name>AlphaLib</Name>
+    </ProjectReference>
     <ProjectReference Include="..\AlphaStandardDemo\AlphaStandardDemo.vbproj">
       <Project>{744d5b0f-f419-4b52-ae8a-242505f4d1d2}</Project>
       <Name>AlphaStandardDemo</Name>
