@@ -10,7 +10,7 @@ Namespace Repositories
     Public Sub New(context As DemoDbContext, connection As String)
       MyBase.New(context, connection)
 
-      _dbContext.Set(Of Carro).Load()
+      '_dbContext.Set(Of Carro).Load()
     End Sub
   End Class
 End Namespace

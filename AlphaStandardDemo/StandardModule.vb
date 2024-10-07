@@ -15,6 +15,7 @@ Public Class StandardModule
   Public Overrides Sub Load()
     Bind(Of IFabrica).To(Of LinhaMontagem)()
     Bind(Of GenericViewModel(Of Carro)).To(Of CarroViewModel)()
+    Bind(Of LinhaMontagemActionsHandler).To(Of FabricaViewModel)()
     Bind(Of GenericViewModel(Of Safra)).To(Of SafraViewModel)()
 
     Bind(Of GenericRepository(Of Carro)).To(Of CarroRepository)().WithConstructorArgument("connection", _sqlConnection)

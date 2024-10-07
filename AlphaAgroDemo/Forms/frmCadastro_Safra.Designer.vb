@@ -23,6 +23,11 @@ Partial Class frmCadastro_Safra
   <System.Diagnostics.DebuggerStepThrough()> _
   Private Sub InitializeComponent()
         Me.DataGridView = New System.Windows.Forms.DataGridView()
+        Me.colId = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.colDescricao = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.colInativo = New System.Windows.Forms.DataGridViewCheckBoxColumn()
+        Me.colDataInicial = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.colDataFinal = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.TextBoxId = New System.Windows.Forms.TextBox()
         Me.TextBoxDescricao = New System.Windows.Forms.TextBox()
         Me.DateTimePickerInicial = New System.Windows.Forms.DateTimePicker()
@@ -32,17 +37,13 @@ Partial Class frmCadastro_Safra
         Me.LabelDecricao = New System.Windows.Forms.Label()
         Me.LabelDataInicial = New System.Windows.Forms.Label()
         Me.LabelDataFinal = New System.Windows.Forms.Label()
-        Me.colId = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.colDescricao = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.colInativo = New System.Windows.Forms.DataGridViewCheckBoxColumn()
-        Me.colDataInicial = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.colDataFinal = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ButtonNovo = New System.Windows.Forms.Button()
         Me.ButtonEditar = New System.Windows.Forms.Button()
         Me.ButtonExcluir = New System.Windows.Forms.Button()
         Me.ButtonFechar = New System.Windows.Forms.Button()
         Me.ButtonSalvar = New System.Windows.Forms.Button()
         Me.ButtonCancelar = New System.Windows.Forms.Button()
+        Me.LabelTesteDeMensageria = New System.Windows.Forms.Label()
         CType(Me.DataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -56,6 +57,43 @@ Partial Class frmCadastro_Safra
         Me.DataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.DataGridView.Size = New System.Drawing.Size(624, 201)
         Me.DataGridView.TabIndex = 0
+        '
+        'colId
+        '
+        Me.colId.DataPropertyName = "Id"
+        Me.colId.HeaderText = "Id"
+        Me.colId.Name = "colId"
+        Me.colId.ReadOnly = True
+        '
+        'colDescricao
+        '
+        Me.colDescricao.DataPropertyName = "Descricao"
+        Me.colDescricao.HeaderText = "Descrição"
+        Me.colDescricao.Name = "colDescricao"
+        Me.colDescricao.ReadOnly = True
+        '
+        'colInativo
+        '
+        Me.colInativo.DataPropertyName = "Inativo"
+        Me.colInativo.HeaderText = "Inativo"
+        Me.colInativo.Name = "colInativo"
+        Me.colInativo.ReadOnly = True
+        Me.colInativo.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.colInativo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
+        '
+        'colDataInicial
+        '
+        Me.colDataInicial.DataPropertyName = "DataInicial"
+        Me.colDataInicial.HeaderText = "Data Inicial"
+        Me.colDataInicial.Name = "colDataInicial"
+        Me.colDataInicial.ReadOnly = True
+        '
+        'colDataFinal
+        '
+        Me.colDataFinal.DataPropertyName = "DataFinal"
+        Me.colDataFinal.HeaderText = "Data Final"
+        Me.colDataFinal.Name = "colDataFinal"
+        Me.colDataFinal.ReadOnly = True
         '
         'TextBoxId
         '
@@ -132,43 +170,6 @@ Partial Class frmCadastro_Safra
         Me.LabelDataFinal.TabIndex = 9
         Me.LabelDataFinal.Text = "Data Final"
         '
-        'colId
-        '
-        Me.colId.DataPropertyName = "Id"
-        Me.colId.HeaderText = "Id"
-        Me.colId.Name = "colId"
-        Me.colId.ReadOnly = True
-        '
-        'colDescricao
-        '
-        Me.colDescricao.DataPropertyName = "Descricao"
-        Me.colDescricao.HeaderText = "Descrição"
-        Me.colDescricao.Name = "colDescricao"
-        Me.colDescricao.ReadOnly = True
-        '
-        'colInativo
-        '
-        Me.colInativo.DataPropertyName = "Inativo"
-        Me.colInativo.HeaderText = "Inativo"
-        Me.colInativo.Name = "colInativo"
-        Me.colInativo.ReadOnly = True
-        Me.colInativo.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.colInativo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
-        '
-        'colDataInicial
-        '
-        Me.colDataInicial.DataPropertyName = "DataInicial"
-        Me.colDataInicial.HeaderText = "Data Inicial"
-        Me.colDataInicial.Name = "colDataInicial"
-        Me.colDataInicial.ReadOnly = True
-        '
-        'colDataFinal
-        '
-        Me.colDataFinal.DataPropertyName = "DataFinal"
-        Me.colDataFinal.HeaderText = "Data Final"
-        Me.colDataFinal.Name = "colDataFinal"
-        Me.colDataFinal.ReadOnly = True
-        '
         'ButtonNovo
         '
         Me.ButtonNovo.Location = New System.Drawing.Point(12, 149)
@@ -223,11 +224,21 @@ Partial Class frmCadastro_Safra
         Me.ButtonCancelar.Text = "Cancelar"
         Me.ButtonCancelar.UseVisualStyleBackColor = True
         '
+        'LabelTesteDeMensageria
+        '
+        Me.LabelTesteDeMensageria.AutoSize = True
+        Me.LabelTesteDeMensageria.Location = New System.Drawing.Point(385, 15)
+        Me.LabelTesteDeMensageria.Name = "LabelTesteDeMensageria"
+        Me.LabelTesteDeMensageria.Size = New System.Drawing.Size(107, 13)
+        Me.LabelTesteDeMensageria.TabIndex = 16
+        Me.LabelTesteDeMensageria.Text = "Teste de Mensageria"
+        '
         'frmCadastro_Safra
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(645, 388)
+        Me.Controls.Add(Me.LabelTesteDeMensageria)
         Me.Controls.Add(Me.ButtonCancelar)
         Me.Controls.Add(Me.ButtonSalvar)
         Me.Controls.Add(Me.ButtonFechar)
@@ -273,4 +284,5 @@ Partial Class frmCadastro_Safra
     Friend WithEvents ButtonFechar As Button
     Friend WithEvents ButtonSalvar As Button
     Friend WithEvents ButtonCancelar As Button
+    Friend WithEvents LabelTesteDeMensageria As Label
 End Class

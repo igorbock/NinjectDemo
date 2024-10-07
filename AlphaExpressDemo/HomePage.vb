@@ -9,7 +9,7 @@ Public Class HomePage
 
     _navigator = navigator
 
-    AddHandler ButtonCarro.Click, Sub() _navigator.ShowPage("Exemplo")
+    AddHandler ButtonCarro.Click, Sub() _navigator.ShowPage("DemoFabrica")
     AddHandler ButtonSafra.Click, Sub() _navigator.ShowPage("frmCadastro_Safra")
   End Sub
 End Class

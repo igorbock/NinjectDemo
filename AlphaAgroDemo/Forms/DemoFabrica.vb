@@ -1,11 +1,12 @@
 ﻿Imports AlphaLib.Abstracts
+Imports AlphaLib.Messenger
 Imports AlphaLib.Models
 Imports AlphaStandardDemo.ViewModel
 
 Public Class DemoFabrica
-  Private ReadOnly Property _viewModel As CarroViewModel
+  Private ReadOnly Property _viewModel As LinhaMontagemActionsHandler
 
-  Public Sub New(viewModel As GenericViewModel(Of Carro))
+  Public Sub New(viewModel As LinhaMontagemActionsHandler)
     InitializeComponent()
 
     _viewModel = viewModel
@@ -37,6 +38,7 @@ Public Class DemoFabrica
     AddHandler ButtonCancelar.Click, Sub() _viewModel.CancelCommand.Execute(Nothing)
     AddHandler DataGridView.CellClick, Sub(sender, e) CellClick(e, DataGridView)
     AddHandler _viewModel.ErrorOcurred, Sub(sender, e) MessageBox.Show(e.GetException().Message, "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information)
+    AddHandler FormClosed, Sub() _viewModel.CloseFormCommand.Execute(New MensagemTeste With {.Titulo = "Teste", .Texto = "Primeira comunicação de mensageria entre ViewModels."})
   End Sub
 
   Private Sub CellClick(e As DataGridViewCellEventArgs, grid As DataGridView)

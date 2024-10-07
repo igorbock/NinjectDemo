@@ -1,8 +1,9 @@
 ﻿Imports AlphaLib.Abstracts
 Imports AlphaLib.Models
+Imports AlphaStandardDemo.ViewModel
 
 Public Class frmCadastro_Safra
-  Private ReadOnly Property _viewModel As GenericViewModel(Of Safra)
+  Private ReadOnly Property _viewModel As SafraViewModel
   Public Property DataSource() As Object
     Get
       Return DataGridView.DataSource
@@ -33,6 +34,7 @@ Public Class frmCadastro_Safra
     CheckBoxInativo.DataBindings.Add("Enabled", _viewModel, NameOf(_viewModel.ControlsEnabled), True, DataSourceUpdateMode.OnPropertyChanged)
     DateTimePickerInicial.DataBindings.Add("Enabled", _viewModel, NameOf(_viewModel.ControlsEnabled), True, DataSourceUpdateMode.OnPropertyChanged)
     DateTimePickerFinal.DataBindings.Add("Enabled", _viewModel, NameOf(_viewModel.ControlsEnabled), True, DataSourceUpdateMode.OnPropertyChanged)
+    LabelTesteDeMensageria.DataBindings.Add("Text", _viewModel, NameOf(_viewModel.Mensagem), True, DataSourceUpdateMode.OnPropertyChanged)
 
     AddHandler Load, Sub() _viewModel.LoadCommand.Execute(Nothing)
     AddHandler ButtonNovo.Click, Sub() _viewModel.CreateCommand.Execute(Nothing)
